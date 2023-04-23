@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 import ImageLight from "../assets/img/create-account-office.jpeg";
 import ImageDark from "../assets/img/create-account-office-dark.jpeg";
-import { GithubIcon, TwitterIcon } from "../icons";
 import { Input, Label, Button } from "@windmill/react-ui";
 
 function Login() {
@@ -56,7 +55,7 @@ function Login() {
                 onChange={(event) => setUsername(event.target.value)}
               >
                 <span>username</span>
-                <Input className="mt-1" type="text" placeholder="johndoe" />
+                <Input className="mt-1" type="text" placeholder="Username" />
               </Label>
               <Label
                 className="mt-4"
@@ -66,7 +65,7 @@ function Login() {
                 <span>email</span>
                 <Input
                   className="mt-1"
-                  placeholder="john@doe.com"
+                  placeholder="Email"
                   type="email"
                 />
               </Label>
@@ -85,8 +84,8 @@ function Login() {
 
               <Label className="mt-6" check>
                 <Input type="checkbox" />
-                <span className="ml-2">
-                  I agree to the{" "}
+                <span className="ml-2 pr-2">
+                  I agree to the
                   <span className="underline">privacy policy</span>
                 </span>
               </Label>
@@ -95,7 +94,7 @@ function Login() {
                 Create account
               </Button>
 
-              <hr className="my-8" />
+              {/* <hr className="my-8" /> */}
 
               {/* <Button block layout="outline">
                 <GithubIcon className="w-4 h-4 mr-2" aria-hidden="true" />

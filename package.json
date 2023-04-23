@@ -1,7 +1,7 @@
 {
-  "name": "windmill-dashboard-react",
+  "name": "mudra",
   "version": "0.4.0",
-  "description": "A multi theme, completely accessible, with components and pages examples, (almost) ready for production dashboard.",
+  "description": "a expense tracker",
   "private": true,
   "scripts": {
     "tailwind:dev": "tailwindcss build src/assets/css/tailwind.css -o src/assets/css/tailwind.output.css",
@@ -45,11 +45,12 @@
     "tailwindcss": "1.4.6"
   },
   "keywords": [
-    "windmill",
+    "mudra",
     "dashboard",
-    "admin",
     "tailwind",
-    "react"
+    "react",
+    "chatbot",
+    "socket.io"
   ],
   "release-it": {
     "github": {

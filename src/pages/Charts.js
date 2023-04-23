@@ -13,26 +13,32 @@ import {
   barLegends,
 } from '../utils/demo/chartsData'
 
+const categories =["Food","Rent", "Health", "Luxury","Travel","Others"]
+
 function Charts() {
   return (
     <>
       <PageTitle>Charts</PageTitle>
-
+     
       <div className="grid gap-6 mb-8 md:grid-cols-2">
-        <ChartCard title="Doughnut">
+        {/* <ChartCard title="Expenses">
           <Doughnut {...doughnutOptions} />
           <ChartLegend legends={doughnutLegends} />
         </ChartCard>
 
-        <ChartCard title="Lines">
+        <ChartCard title="Income-Expense">
           <Line {...lineOptions} />
           <ChartLegend legends={lineLegends} />
-        </ChartCard>
-
-        <ChartCard title="Bars">
+        </ChartCard> */}
+      {
+        categories.map((category)=>(
+          
+          <ChartCard title={"Insights on " + category}>
           <Bar {...barOptions} />
           <ChartLegend legends={barLegends} />
         </ChartCard>
+        
+        ))}
       </div>
     </>
   )

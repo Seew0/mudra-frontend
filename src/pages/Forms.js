@@ -1,6 +1,4 @@
 import React from "react";
-
-import CTA from "../components/CTA";
 import PageTitle from "../components/Typography/PageTitle";
 import SectionTitle from "../components/Typography/SectionTitle";
 import {
@@ -12,7 +10,6 @@ import {
   Textarea,
 } from "@windmill/react-ui";
 
-import { MailIcon } from "../icons";
 import { useState } from "react";
 
 async function getApiData() {
@@ -48,9 +45,7 @@ function Forms() {
 
   return (
     <>
-      <PageTitle>Forms</PageTitle>
-      <CTA />
-      <SectionTitle>Elements</SectionTitle>
+      <PageTitle>Create transaction</PageTitle>
 
       <form onSubmit={handleSubmit}>
         <div className="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
@@ -59,7 +54,7 @@ function Forms() {
             onChange={(event) => setTitle(event.target.value)}
           >
             <span>Title</span>
-            <Input className="mt-1" placeholder="Bank" />
+            <Input className="mt-1" placeholder="Title" />
           </Label>
 
           <Label

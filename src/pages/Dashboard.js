@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-
-import CTA from "../components/CTA";
 import InfoCard from "../components/Cards/InfoCard";
 import ChartCard from "../components/Chart/ChartCard";
 import { Doughnut, Line } from "react-chartjs-2";
@@ -16,10 +14,7 @@ import {
   TableHeader,
   TableCell,
   TableRow,
-  TableFooter,
-  Avatar,
-  Badge,
-  Pagination,
+
 } from "@windmill/react-ui";
 
 import {
@@ -73,18 +68,18 @@ function Dashboard() {
     data: {
       datasets: [
         {
-          data: [20, 30, 40, 50, 20],
+          data: [20, 30, 40, 50, 20,32],
           /**
            * These colors come from Tailwind CSS palette
-           * https://tailwindcss.com/docs/customizing-colors/#default-color-palette
+           * https://tailwindcss.com/docs/customizapp/charts#ing-colors/#default-color-palette
            */
           backgroundColor: [
             "#0694a2",
+            "#ca8a04",
             "#1c64f2",
             "#7e3af2",
-            "#fff",
-            "#1c64f1",
-            "#fff3",
+            '#dc2626',
+            '#4b5563',
           ],
           label: "Dataset 1",
         },
@@ -196,8 +191,6 @@ function Dashboard() {
     <>
       <PageTitle>Dashboard</PageTitle>
 
-      <CTA />
-
       {/* <!-- Cards --> */}
       {/* <div className="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">
         {users.map((user) => (
@@ -238,16 +231,7 @@ function Dashboard() {
         ))}
       </div> */}
       <div className="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">
-        <InfoCard title="Total clients" value={inncome}>
-          <RoundIcon
-            icon={PeopleIcon}
-            iconColorClass="text-orange-500 dark:text-orange-100"
-            bgColorClass="bg-orange-100 dark:bg-orange-500"
-            className="mr-4"
-          />
-        </InfoCard>
-
-        <InfoCard title="Account balance" value={eexpense}>
+        <InfoCard title="Income" value={inncome}>
           <RoundIcon
             icon={MoneyIcon}
             iconColorClass="text-green-500 dark:text-green-100"
@@ -256,7 +240,16 @@ function Dashboard() {
           />
         </InfoCard>
 
-        <InfoCard title="New sales" value={wallet}>
+        <InfoCard title="Expenses" value={eexpense}>
+          <RoundIcon
+            icon={MoneyIcon}
+            iconColorClass="text-red-500 dark:text-red-100"
+            bgColorClass="bg-red-100 dark:bg-red-500"
+            className="mr-4"
+          />
+        </InfoCard>
+
+        <InfoCard title="Wallet" value={wallet}>
           <RoundIcon
             icon={CartIcon}
             iconColorClass="text-blue-500 dark:text-blue-100"
@@ -265,7 +258,7 @@ function Dashboard() {
           />
         </InfoCard>
 
-        <InfoCard title="Pending contacts" value="35">
+        <InfoCard title="Prediction" value="35">
           <RoundIcon
             icon={ChatIcon}
             iconColorClass="text-teal-500 dark:text-teal-100"
@@ -311,24 +304,24 @@ function Dashboard() {
             ))}
           </TableBody>
         </Table>
-        <TableFooter>
-          <Pagination
+        {/* <TableFooter>
+           <Pagination
             totalResults={totalResults}
             resultsPerPage={resultsPerPage}
             label="Table navigation"
             onChange={onPageChange}
-          />
-        </TableFooter>
+          /> 
+        </TableFooter> */}
       </TableContainer>
 
       <PageTitle>Charts</PageTitle>
       <div className="grid gap-6 mb-8 md:grid-cols-2">
-        <ChartCard title="Revenue">
+        <ChartCard title="Expenses">
           <Doughnut {...doughnutOptions} />
           <ChartLegend legends={doughnutLegends} />
         </ChartCard>
 
-        <ChartCard title="Traffic">
+        <ChartCard title="Income-Expense">
           <Line {...lineOptions} />
           <ChartLegend legends={lineLegends} />
         </ChartCard>
